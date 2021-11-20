@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+/** 
+* \brief  математическая функция вычисляющая площадь грани * \param rib_length длина ребра
+* \return возвращает значение площади грани
+**/
+
+double getArea_calculation(const double rib_length);
+
+/** 
+* \brief  математическая функция вычисляющая значение площади полной поверхности
+* \param rib_length длина ребра
+* \return возвращает значение площади полной поверхности 
+**/
+double getTotal_surface_area(const double rib_length);
+
+/** 
+* \brief  математическая функция вычисляющая значение объема
+* \param rib_length длина ребра
+* \return возвращает объема
+**/
+double getVolume(const double rib_length);
+
+/**
+* \brief точка входа в программу
+* \return возвращает 0 в случае успешного выполнения
+*/
+int main()
+{
+  cout <<"Введите число и нажмите Enter";
+  double rib_length;
+  cin >> rib_length;
+  const auto area_calculation = getArea_calculation(rib_length);
+  const auto total_surface_area = getTotal_surface_area(rib_length);
+  const auto volume = getVolume(rib_length);
+  cout <<"rib_length = " << rib_length <<"\n area_calculation = " << area_calculation <<" \n total_surface_area =" << total_surface_area <<" \n volume = " << volume;
+  }
+
+double getArea_calculation(const double rib_length)
+{
+ return rib_length * rib_length;
+ }
+double getTotal_surface_area(const double rib_length)
+{
+ return 6 * (rib_length * rib_length);
+ }
+
+double getVolume(const double rib_length)
+{
+ return rib_length * rib_length * rib_length;
+ }
