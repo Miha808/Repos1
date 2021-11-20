@@ -1,59 +1,47 @@
-#include <iostream>
-#include <cmath>
+#include #include
 
 using namespace std;
 
-
 /** 
-* \brief  математическая функция вычисляющая площадь грани * \param rib_length длина ребра
-* \return возвращает значение площади грани
+*\brief Математическая функция, вычисляющая силу тяжести 
+*\param const double mass - масса мешка 
+*\return возвращает значение F - сила тяжести 
 **/
 
-double getArea_calculation(const double rib_length);
+double getGravity(const double mass);
 
 /** 
-* \brief  математическая функция вычисляющая значение площади полной поверхности
-* \param rib_length длина ребра
-* \return возвращает значение площади полной поверхности 
+*\brief Математическая функция, вычисляющая вес мешка 
+*\param const double weight - вес мешка 
+*\return возвращает значение веса мешка 
 **/
-double getTotal_surface_area(const double rib_length);
+
+double getWeight(const double wass);
 
 /** 
-* \brief  математическая функция вычисляющая значение объема
-* \param rib_length длина ребра
-* \return возвращает объема
-**/
-double getVolume(const double rib_length);
-
-/**
-* \brief точка входа в программу
-* \return возвращает 0 в случае успешного выполнения
+*\brief точка входа в программу 
+*\return возвращает 0 после успешного выполнения 
 */
-int main()
-{
-  cout <<"Введите число и нажмите Enter";
-  double rib_length;
-  cin >> rib_length;
-  const auto area_calculation = getArea_calculation(rib_length);
-  const auto total_surface_area = getTotal_surface_area(rib_length);
-  const auto volume = getVolume(rib_length);
-  cout <<"rib_length = " << rib_length <<"\n area_calculation = " << area_calculation <<" \n total_surface_area =" << total_surface_area <<" \n volume = " << volume;
-  }
 
-double getArea_calculation(const double rib_length)
-{
- return rib_length * rib_length;
- }
-double getTotal_surface_area(const double rib_length)
-{
- return 6 * (rib_length * rib_length);
+int main() 
+{ 
+ cout << "Введите число и нажмите Enter"; 
+ double mass; 
+ cin >> mass; 
+ const auto gravity = getGravity(mass); 
+ const auto weight = getWeight(mass); 
+ cout << "mass=" << mass <<"\n gravity= " << gravity <<"\n weight=" << weight; 
  }
 
-double getVolume(const double rib_length)
-{
- return rib_length * rib_length * rib_length;
+double getGravity(const double mass) 
+{ 
+ return 9.8 * mass; 
  }
 
+double getWeight(const double mass) 
+{ 
+ return 9.8 * mass; 
+ }
 
 
 
