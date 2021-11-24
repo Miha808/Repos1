@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 /**
 *\brief Математическая функция, вычисляющая силу тяжести
 *\param const double mass - масса мешка
@@ -26,20 +27,20 @@ double getWeight(const double wass);
 
 int main()
 {
-	cout<<"Введите число и нажмите Enter: /n";
+	cout << "Введите число и нажмите Enter: /n";
 	double mass;
 	cin >> mass;
 	const auto gravity = getGravity(mass);
-	const auto wieght = getWeight(mass);
-	cout <<"mass" = mass;
+	const auto weight = getWeight(mass);
+	cout << "mass = " << mass << "gravity = " << gravity << "weight = " << weight;
 }
 
 double getGravity(const double mass)
 {
-return 9.8 * mass;
+	return 9.8 * mass;
 }
 
-double getMass(const double mass)
+double getWeight(const double mass)
 {
-return 9.8 * mass;
+	return 9.8 * mass;
 }
