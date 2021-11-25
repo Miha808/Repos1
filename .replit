@@ -1,0 +1,39 @@
+#define USE_MATH_DEFINES
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+/*
+*\brief Вычисляет значение функции
+*\param  Значение x
+*\param  Значение a
+*\param  Значение b
+*\return Значение y
+*/
+double getFunction(double x, double const a, double const b);
+
+int main()
+{
+    double const a=0.29, b= 1.2502;
+    double x, left, right, step;
+    cout << "Введите левую границу" << endl;
+    cin >> left;
+    cout << "Введите правую границу" << endl;
+    cin >> right;
+    cout << "Ведите значение шага " << endl;
+    cin >> step;
+
+    x = left;
+    while (x <= right)
+    {
+        cout << setprecision(5) << getFunction(x,a,b) << endl;
+        x += step;
+    }
+}
+
+double getFunction(double x, double const a, double const b)
+{
+    return a * pow(x, 3) + x - b;
+}
