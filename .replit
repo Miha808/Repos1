@@ -1,0 +1,64 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+const double a = 2;
+
+/**
+*\brief Математическая функция, работающая для ограничений x >= 1 и x <= 2
+*\param const double x, const double c - значения x, c
+*\return возвращает значение функции
+**/
+
+double getFunctionFirst(const double x, const double c);
+
+/**
+*\brief Математическая функция, работающая для ограничений x > 2.
+*\param const double x, const double c - значения x, c
+*\return возвращает значение функции
+**/
+
+double getFunctionSecond(const double x, const double c);
+
+/**
+*\brief точка входа в программу
+*\return возвращает 0 после успешного выполнения
+*/
+
+int main()
+{
+    
+    const double lim = 2;
+    const double c = 1;
+    double x;
+    cout << "Введите значение = ";
+    cin >> x;
+    double y;
+
+    if (x > lim)
+    {
+        y = getFunctionSecond(x, c);
+    }
+    else if (x < lim)
+    {
+        y = 1;
+    }
+    else
+    {
+        y = getFunctionFirst(x, c);
+    }
+    cout << "Y = " << y;
+    return 0;
+}
+double getFunctionFirst(const double x, const double c)
+{
+    return c * pow(x, 2 * log(x));
+}
+
+   
+
+double getMass(const double x, const double c)
+{
+    return exp(c * x) * cos(x);
+}
