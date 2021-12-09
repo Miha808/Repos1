@@ -1,39 +1,44 @@
-#define USE_MATH_DEFINES
-#include <iostream>
-#include <cmath>
-#include <iomanip>
+#include<iostream>
+#include<cmath>
 
 using namespace std;
-
-/*
-*\brief Вычисляет значение функции
-*\param  Значение x
-*\param  Значение a
-*\param  Значение b
-*\return Значение y
+/**
+ * \brief функция для расчета значений табуляции.
+ * \x начало интервала.
+ * \return значение табуляции.
 */
-double getFunction(double x, double const a, double const b);
-
-int main()
+double getFunction(double x);
+/**
+ * \brief Возможность выполнения функции.
+ * \return в случае успеха, возвращает 1)
+*/
+bool getNoSolution(double x);
+/**
+ * \brief Вход в программу.
+ * \return в случае успеха, возвращает 0.
+*/
+int main() 
 {
-    double const a=0.29, b= 1.2502;
-    double x, left, right, step;
-    cout << "Введите левую границу" << endl;
-    cin >> left;
-    cout << "Введите правую границу" << endl;
-    cin >> right;
-    cout << "Ведите значение шага " << endl;
-    cin >> step;
+	double x = 0.5;
+	const auto maxvalue = 1;
+	const auto step = 0.05;
 
-    x = left;
-    while (x <= right)
-    {
-        cout << setprecision(5) << getFunction(x,a,b) << endl;
-        x += step;
-    }
+	for (x; x <= maxvalue; x += step) 
+	{
+		if (NoDecision(x))
+			cout << "x: " << x << " y: " << getFunction(x);
+	}
+
+	system("pause");
+	return 0;
 }
 
-double getFunction(double x, double const a, double const b)
+double getFunction(double x)
 {
-    return a * pow(x, 3) + x - b;
+	return 0.29 * pow(x, 3) + x - 1.2502;
+}
+
+bool NoDecision(double x) 
+{
+	return x > 0;
 }
