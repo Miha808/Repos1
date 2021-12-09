@@ -1,46 +1,44 @@
-#include <iostream>
-#include <cmath>
+#include<iostream>
+#include<cmath>
 
 using namespace std;
-
-
 /**
-*\brief Математическая функция, вычисляющая силу тяжести
-*\param const double mass - масса мешка
-*\return возвращает значение F - сила тяжести
-**/
-
-double getGravity(const double mass);
-
-/**
-*\brief Математическая функция, вычисляющая вес мешка
-*\param const double weight - вес мешка
-*\return возвращает значение веса мешка
-**/
-
-double getWeight(const double wass);
-
-/**
-*\brief точка входа в программу
-*\return возвращает 0 после успешного выполнения
+ * \brief функция для расчета значений табуляции.
+ * \x начало интервала.
+ * \return значение табуляции.
 */
-
-int main()
+double getFunction(double x);
+/**
+ * \brief Возможность выполнения функции.
+ * \return в случае успеха, возвращает 1)
+*/
+bool getNoSolution(double x);
+/**
+ * \brief Вход в программу.
+ * \return в случае успеха, возвращает 0.
+*/
+int main() 
 {
-	cout << "Введите число и нажмите Enter: /n";
-	double mass;
-	cin >> mass;
-	const auto gravity = getGravity(mass);
-	const auto weight = getWeight(mass);
-	cout << "mass = " << mass << "gravity = " << gravity << "weight = " << weight;
+	double x = 0.5;
+	const auto maxvalue = 1;
+	const auto step = 0.05;
+
+	for (x; x <= maxvalue; x += step) 
+	{
+		if (NoDecision(x))
+			cout << "x: " << x << " y: " << getFunction(x);
+	}
+
+	system("pause");
+	return 0;
 }
 
-double getGravity(const double mass)
+double getFunction(double x)
 {
-	return 9.8 * mass;
+	return 0.29 * pow(x, 3) + x - 1.2502;
 }
 
-double getWeight(const double mass)
+bool NoDecision(double x) 
 {
-	return 9.8 * mass;
+	return x > 0;
 }
